@@ -1,13 +1,20 @@
 import useFormulario from "./hooks/useFormulario";
+import Input from "./components/Input";
 function App() {
-  const [formulario, handleChange] = useFormulario({ name: "" });
+  const [formulario, handleChange] = useFormulario({ name: "", lastname: "" });
   console.log(formulario);
   return (
     <form>
-      <input
+      <Input
+        label="Nombre: "
         name="name"
-        placeholder="Nombre"
         value={formulario.name}
+        onChange={handleChange}
+      />
+      <Input
+        label="Apellido: "
+        name="lastname"
+        value={formulario.lastname}
         onChange={handleChange}
       />
     </form>
